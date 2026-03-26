@@ -41,7 +41,7 @@ public class Ruleta {
      * @return número de opción ingresado.
      */
     public static int leerOpcion(Scanner in) {
-        while (!in.hasNextINt()) {
+        while (!in.hasNextInt()) {
             in.next();
             System.out.print("Error. Ingrese un numero: ");
         }
@@ -52,7 +52,17 @@ public class Ruleta {
      * @param opcion opción elegida por el usuario.
      * @param in Scanner para entrada por consola.
      */
-    public static void ejecutarOpcion(int opcion, Scanner in) {}
+    public static void ejecutarOpcion(int opcion, Scanner in) {
+        if (opcion == 1) {
+            iniciarRonda(in);
+        } else if (opcion == 2) {
+            mostrarEstadisticas();
+        } else if (opcion == 3) {
+            System.out.println("Gracias por jugar!!");
+        } else {
+            System.out.println("Opcion no valida.");
+        }
+    }
     /**
      * Inicia una ronda de la ruleta: leer apuesta, girar, evaluar y mostrar resultado.
      * @param in Scanner para entrada por consola.
