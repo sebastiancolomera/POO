@@ -50,7 +50,10 @@ public class Ruleta {
      * @return el tipo de apuesta elegido.
      */
     public static char leerTipoApuesta(Scanner in) {
-        return ’ ’;
+        System.out.println("Seleccione su apuesta:");
+        System.out.print("(R) ROJO, (N) NEGRO, (P) PAR, (I) IMPAR");
+        char tipo = in.next().toUpperCase().charAt(0);
+        return tipo;
     }
     /**
      * Simula el giro de la ruleta generando un número aleatorio de 0 a 36.
