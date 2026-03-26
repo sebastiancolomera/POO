@@ -72,6 +72,11 @@ public class Ruleta {
      * @return true si acertó, false si perdió.
      */
     public static boolean evaluarResultado(int numero, char tipo) {
+        if (numero == 0) return false;
+        if (tipo == 'R') return esRojo(numero);
+        if (tipo == 'N') return !esRojo(numero);
+        if (tipo == 'P') return numero % 2 == 0;
+        if (tipo == 'I') return numero % 2 != 0;
         return false;
     }
     /**
