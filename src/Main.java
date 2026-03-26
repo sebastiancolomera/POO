@@ -19,7 +19,15 @@ public class Ruleta {
     /**
      * Controla el flujo principal del programa mostrando un menú en consola.
      */
-    public static void menu() {}
+    public static void menu() {
+        Scanner in = new Scanner(System.in);
+        int opcion;
+        do {
+            mostrarMenu();
+            opcion = leerOpcion(in);
+            ejecutarOpcion(opcion, in);
+        } while (opcion != 3);
+    }
     /**
      * Muestra en consola las opciones disponibles del menú.
      */
