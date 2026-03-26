@@ -31,14 +31,21 @@ public class Ruleta {
     /**
      * Muestra en consola las opciones disponibles del menú.
      */
-    public static void mostrarMenu() {}
+    public static void mostrarMenu() {
+        System.out.println("\n===CASINO BLACK CAT===\n1) Iniciar ronda de ruleta\n2) Ver estadísticas\n3) Salir del sistema");
+        System.out.print("Seleccione una opción");
+    }
     /**
      * Lee la opción elegida por el usuario desde teclado.
      * @param in Scanner para entrada por consola.
      * @return número de opción ingresado.
      */
     public static int leerOpcion(Scanner in) {
-        return 0;
+        while (!in.hasNextINt()) {
+            in.next();
+            System.out.print("Error. Ingrese un numero: ");
+        }
+        return in.nextInt();
     }
     /**
      * Ejecuta la acción correspondiente a la opción del menú.
