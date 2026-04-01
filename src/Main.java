@@ -121,7 +121,14 @@ public class Ruleta {
  * @param apuesta monto apostado.
  * @param acierto si el jugador acertó o no.
  */
-    public static void registrarResultado(int numero, int apuesta, boolean acierto) {}
+    public static void registrarResultado(int numero, int apuesta, boolean acierto) {
+        if (historialSize < MAX_HISTORIAL) {
+            historialNumeros[historialSize] = numero;
+            historialApuestas[historialSize] = apuesta;
+            historialAciertos[historialSize] = acierto;
+            historialSize++;
+        }
+    }
     /**
      * Muestra en consola el resultado de la ronda.
      * @param numero número obtenido en la ruleta.

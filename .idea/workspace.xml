@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c59106ea-a90b-49bf-b363-adcc3fba8f23" name="Changes" comment="Implementación de ejucutarOpcion y error de escritura en leerOpcion">
+    <list default="true" id="c59106ea-a90b-49bf-b363-adcc3fba8f23" name="Changes" comment="Arreglo de errores de tipeo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +105,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774531725864</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Arreglo de errores de tipeo">
+      <option name="closed" value="true" />
+      <created>1775082377601</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1775082377601</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -116,6 +123,7 @@
     <MESSAGE value="Implementación de main y menu" />
     <MESSAGE value="Implementación de mostraMenu y leerOpcion" />
     <MESSAGE value="Implementación de ejucutarOpcion y error de escritura en leerOpcion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementación de ejucutarOpcion y error de escritura en leerOpcion" />
+    <MESSAGE value="Arreglo de errores de tipeo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglo de errores de tipeo" />
   </component>
 </project>
