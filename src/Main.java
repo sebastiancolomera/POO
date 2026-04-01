@@ -158,5 +158,15 @@ public class Ruleta {
     /**
      * Muestra estadísticas generales de todas las rondas jugadas.
      */
-    public static void mostrarEstadisticas() {}
+    public static void mostrarEstadisticas() {
+        int apostado = 0, aciertos = 0, balance = 0;
+        for (int i = 0; i < historialSize; i++) {
+            apostado += historialApuestas[i];
+            if (historialAciertos[i]) { aciertos++; balance += historialApuestas[i]; }
+            else { balance -= historialApuestas[i]; }
+        }
+        System.out.println("\n====={ESTADISTICAS}=====");
+        System.out.println("Rondas: " + historialSize + " | Total Apostado: " + apostado);
+        System.out.println("Aciertos: " + aciertos + " | Balance Neto: " + balance);
+    }
 }
