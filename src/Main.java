@@ -66,7 +66,16 @@ public class Ruleta {
      * Inicia una ronda de la ruleta: leer apuesta, girar, evaluar y mostrar resultado.
      * @param in Scanner para entrada por consola.
      */
-    public static void iniciarRonda(Scanner in) {}
+    public static void iniciarRonda(Scanner in) {
+        System.out.print("Ingrese monto a apostar: ");
+        int monto = in.nextInt();
+        char tipo = leerTipoApuesta(in);
+
+        int resultadoNum = girarRuleta();
+        boolean gano = evaluarResultado(resultadoNum, tipo);
+        registrarResultado(resultadoNum,monto,gano);
+        mostrarResultado(resultadoNum,tipo,monto,gano);
+    }
     /**
      * Permite al usuario seleccionar el tipo de apuesta (R/N/P/I).
      * @param in Scanner para entrada por consola.

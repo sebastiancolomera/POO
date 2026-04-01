@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c59106ea-a90b-49bf-b363-adcc3fba8f23" name="Changes" comment="Arreglo de errores de tipeo">
+    <list default="true" id="c59106ea-a90b-49bf-b363-adcc3fba8f23" name="Changes" comment="Implentación de registrarResultado.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775082377601</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Implentación de registrarResultado.">
+      <option name="closed" value="true" />
+      <created>1775084367675</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1775084367675</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -124,6 +133,7 @@
     <MESSAGE value="Implementación de mostraMenu y leerOpcion" />
     <MESSAGE value="Implementación de ejucutarOpcion y error de escritura en leerOpcion" />
     <MESSAGE value="Arreglo de errores de tipeo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglo de errores de tipeo" />
+    <MESSAGE value="Implentación de registrarResultado." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implentación de registrarResultado." />
   </component>
 </project>
