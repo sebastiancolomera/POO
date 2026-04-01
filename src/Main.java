@@ -12,7 +12,6 @@ public class Ruleta {
 /**
  * Método principal: inicia el programa llamando al menú.
  */
-2
     public static void main(String[] args) {
         menu();
     }
@@ -33,7 +32,7 @@ public class Ruleta {
      */
     public static void mostrarMenu() {
         System.out.println("\n===CASINO BLACK CAT===\n1) Iniciar ronda de ruleta\n2) Ver estadísticas\n3) Salir del sistema");
-        System.out.print("Seleccione una opción");
+        System.out.print("Seleccione una opción: ");
     }
     /**
      * Lee la opción elegida por el usuario desde teclado.
@@ -71,7 +70,6 @@ public class Ruleta {
     /**
      * Permite al usuario seleccionar el tipo de apuesta (R/N/P/I).
      * @param in Scanner para entrada por consola.
-    3
      * @return el tipo de apuesta elegido.
      */
     public static char leerTipoApuesta(Scanner in) {
@@ -123,7 +121,6 @@ public class Ruleta {
  * @param apuesta monto apostado.
  * @param acierto si el jugador acertó o no.
  */
-4
     public static void registrarResultado(int numero, int apuesta, boolean acierto) {}
     /**
      * Muestra en consola el resultado de la ronda.
