@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c59106ea-a90b-49bf-b363-adcc3fba8f23" name="Changes" comment="Implentación de registrarResultado.">
+    <list default="true" id="c59106ea-a90b-49bf-b363-adcc3fba8f23" name="Changes" comment="Implentación de iniciarRonda.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -47,7 +47,7 @@
     "git-widget-placeholder": "lab01-CasinoBlackCat",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "/home/sebastian/Tareas/lab01/src/Main.java",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "editor.preferences.folding"
   }
 }]]></component>
   <component name="TaskManager">
@@ -122,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775084367675</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Implentación de iniciarRonda.">
+      <option name="closed" value="true" />
+      <created>1775085026521</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1775085026521</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -134,6 +142,7 @@
     <MESSAGE value="Implementación de ejucutarOpcion y error de escritura en leerOpcion" />
     <MESSAGE value="Arreglo de errores de tipeo" />
     <MESSAGE value="Implentación de registrarResultado." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implentación de registrarResultado." />
+    <MESSAGE value="Implentación de iniciarRonda." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implentación de iniciarRonda." />
   </component>
 </project>

@@ -31,7 +31,7 @@ public class Ruleta {
      * Muestra en consola las opciones disponibles del menú.
      */
     public static void mostrarMenu() {
-        System.out.println("\n===CASINO BLACK CAT===\n1) Iniciar ronda de ruleta\n2) Ver estadísticas\n3) Salir del sistema");
+        System.out.println("\n=====[CASINO BLACK CAT]=====\n1) Iniciar ronda de ruleta\n2) Ver estadísticas\n3) Salir del sistema");
         System.out.print("Seleccione una opción: ");
     }
     /**
@@ -92,7 +92,7 @@ public class Ruleta {
      * @return número de la ruleta.
      */
     public static int girarRuleta() {
-        System.out.println("Girando la ruleta!");
+        System.out.println("Girando la ruleta!!!");
         int resultado = rng.nextInt(37);
         System.out.println("El numero es:"+resultado+"!");
         return resultado;
@@ -146,7 +146,15 @@ public class Ruleta {
      * @param acierto si el jugador ganó o perdió.
      */
     public static void mostrarResultado(int numero, char tipo, int monto, boolean
-            acierto) {}
+            acierto) {
+        System.out.println("\n===={RESULTADO}====");
+        System.out.println("El numero ganador fue: "+numero);
+        if (acierto) {
+            System.out.println("¡GG! Has ganado " + (monto) + " fichas.");
+        } else {
+            System.out.println("JAJAJAJA Suerte la próxima ToT Perdiste " + monto + " fichas.");
+        }
+    }
     /**
      * Muestra estadísticas generales de todas las rondas jugadas.
      */
