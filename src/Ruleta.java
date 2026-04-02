@@ -167,6 +167,6 @@ public class Ruleta {
         }
         double porcentaje = (historialSize == 0) ? 0 : (aciertos * 100.0) / historialSize;
         System.out.println("\n====={ESTADISTICAS}=====");
-        System.out.println("Rondas: " + historialSize + " | Total Apostado: " + apostado +"\nAciertos: " + aciertos + " | Balance Neto: " + balance +"\nPorcentaje de acierto: " + porcentaje);
+        System.out.println("Rondas: " + historialSize + " | Total Apostado: " + apostado +"\nAciertos: " + aciertos + " | Balance Neto: " + balance +"\nPorcentaje de acierto: " + porcentaje + "%");
     }
 }
