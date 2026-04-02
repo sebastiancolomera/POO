@@ -1,8 +1,10 @@
 #CASINO BLACK CAT:
 
 Laboratorio 1 de POO, consiste en un casino virtual que cuenta con una ruleta.
-Funciones:
-+ Menu con 3 opciones:
+
+Contiene:
+
+Menu con 3 opciones:
 1) Iniciar ronda de ruleta:
 - Ingresar un monto de fichas.
 - Seleccionar apuesta entre rojo, negro, par e impar.
@@ -15,5 +17,5 @@ Funciones:
 - Balance Neto.
 - Porcentaje de aciertos.
 3) Salir del sistema
--Mensaje de despedida.
+- Mensaje de despedida.
 - Fin del proceso.
