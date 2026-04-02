@@ -11,7 +11,7 @@ Menu con 3 opciones:
 - Simulación de giro de la ruleta.
 - Muestra de resultados.
 2) Ver estadisticas:
-- Cantidad dde rondas.
+- Cantidad de rondas.
 - Total apostado.
 - Aciertos.
 - Balance Neto.
