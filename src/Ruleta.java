@@ -68,13 +68,16 @@ public class Ruleta {
      */
     public static void iniciarRonda(Scanner in) {
         System.out.print("Ingrese monto a apostar: ");
+        while (!in.hasNextInt()) {
+            in.next();
+            System.out.println("Ingrese un monto numerico entero: ");
+        }
         int monto = in.nextInt();
         char tipo = leerTipoApuesta(in);
-
-        int resultadoNum = girarRuleta();
-        boolean gano = evaluarResultado(resultadoNum, tipo);
-        registrarResultado(resultadoNum,monto,gano);
-        mostrarResultado(resultadoNum,tipo,monto,gano);
+        int num = girarRuleta();
+        boolean gano = evaluarResultado(num, tipo);
+        registrarResultado(num,monto,gano);
+        mostrarResultado(num,tipo,monto,gano);
     }
     /**
      * Permite al usuario seleccionar el tipo de apuesta (R/N/P/I).
@@ -82,9 +85,14 @@ public class Ruleta {
      * @return el tipo de apuesta elegido.
      */
     public static char leerTipoApuesta(Scanner in) {
-        System.out.println("Seleccione su apuesta:");
-        System.out.print("(R) ROJO, (N) NEGRO, (P) PAR, (I) IMPAR: ");
-        return in.next().toUpperCase().charAt(0);
+        char opcion = ' ';
+        while (opcion != 'R' && opcion != 'N' && opcion != 'P' && opcion != 'I') {
+            System.out.println("Elija (R) ROJO, (N) NEGRO, (P) PAR o (I) IMPAR");
+            System.out.print("Seleccione su apuesta: ");
+            String entrada = in.next().toUpperCase();
+            opcion = (entrada.length()>0) ? entrada.charAt(0) : ' ';
+        }
+        return opcion;
     }
     /**
      * Simula el giro de la ruleta generando un número aleatorio de 0 a 36.
