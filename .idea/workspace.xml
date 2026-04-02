@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c59106ea-a90b-49bf-b363-adcc3fba8f23" name="Changes" comment="Cambios estéticos e implementación de mostrarResultado.">
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="c59106ea-a90b-49bf-b363-adcc3fba8f23" name="Changes" comment="cambio de nombre Main.java a Ruleta.java, Arreglo de redundancia en la linea 87 (en leerTipoApuesta)" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -137,7 +135,23 @@
       <option name="project" value="LOCAL" />
       <updated>1775086995987</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Implementaciónde mostrarEstadísticas">
+      <option name="closed" value="true" />
+      <created>1775087294252</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1775087294252</updated>
+    </task>
+    <task id="LOCAL-00012" summary="cambio de nombre Main.java a Ruleta.java, Arreglo de redundancia en la linea 87 (en leerTipoApuesta)">
+      <option name="closed" value="true" />
+      <created>1775087727758</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1775087727758</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -151,6 +165,8 @@
     <MESSAGE value="Implentación de registrarResultado." />
     <MESSAGE value="Implentación de iniciarRonda." />
     <MESSAGE value="Cambios estéticos e implementación de mostrarResultado." />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios estéticos e implementación de mostrarResultado." />
+    <MESSAGE value="Implementaciónde mostrarEstadísticas" />
+    <MESSAGE value="cambio de nombre Main.java a Ruleta.java, Arreglo de redundancia en la linea 87 (en leerTipoApuesta)" />
+    <option name="LAST_COMMIT_MESSAGE" value="cambio de nombre Main.java a Ruleta.java, Arreglo de redundancia en la linea 87 (en leerTipoApuesta)" />
   </component>
 </project>

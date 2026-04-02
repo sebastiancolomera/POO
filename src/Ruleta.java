@@ -147,6 +147,7 @@ public class Ruleta {
     public static void mostrarResultado(int numero, char tipo, int monto, boolean
             acierto) {
         System.out.println("\n===={RESULTADO}====");
+        System.out.println("Apostaste a la opcion: " + tipo);
         System.out.println("El numero ganador fue: "+numero);
         if (acierto) {
             System.out.println("¡GG! Has ganado " + (monto) + " fichas.");
