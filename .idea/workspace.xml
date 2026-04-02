@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c59106ea-a90b-49bf-b363-adcc3fba8f23" name="Changes" comment="Arreglo de excepts en iniciarRonda y leerTipoApuesta.">
-      <change beforePath="$PROJECT_DIR$/src/Ruleta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ruleta.java" afterDir="false" />
+    <list default="true" id="c59106ea-a90b-49bf-b363-adcc3fba8f23" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,7 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "lab01-CasinoBlackCat",
+    "git-widget-placeholder": "lab02-GUI-Login",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "/home/sebastian/Tareas/lab01/src/Main.java",
     "settings.editor.selected.configurable": "editor.preferences.folding"
@@ -193,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775094775161</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Se acepto sugerencia de Quickfix, aunque en vez de implementar isEmpty() (sugerido), se implemento una mejor opcion isBlank() en leerTipoApuesta.">
+      <option name="closed" value="true" />
+      <created>1775095354207</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1775095354207</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -214,6 +230,7 @@
     <MESSAGE value="Se incluye porcentaje de acierto en mostraEstadisticas." />
     <MESSAGE value="Arreglo estético en el porcentaje de mostrarEstadisticas." />
     <MESSAGE value="Arreglo de excepts en iniciarRonda y leerTipoApuesta." />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglo de excepts en iniciarRonda y leerTipoApuesta." />
+    <MESSAGE value="Se acepto sugerencia de Quickfix, aunque en vez de implementar isEmpty() (sugerido), se implemento una mejor opcion isBlank() en leerTipoApuesta." />
+    <option name="LAST_COMMIT_MESSAGE" value="Se acepto sugerencia de Quickfix, aunque en vez de implementar isEmpty() (sugerido), se implemento una mejor opcion isBlank() en leerTipoApuesta." />
   </component>
 </project>
