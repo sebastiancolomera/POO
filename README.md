@@ -1,4 +1,5 @@
-#CASINO BLACK CAT
+#CASINO BLACK CAT:
+
 Laboratorio 1 de POO, consiste en un casino virtual que cuenta con una ruleta.
 Funciones:
 + Menu con 3 opciones:
