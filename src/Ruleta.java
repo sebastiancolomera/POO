@@ -165,8 +165,8 @@ public class Ruleta {
             if (historialAciertos[i]) { aciertos++; balance += historialApuestas[i]; }
             else { balance -= historialApuestas[i]; }
         }
+        double porcentaje = (historialSize == 0) ? 0 : (aciertos * 100.0) / historialSize;
         System.out.println("\n====={ESTADISTICAS}=====");
-        System.out.println("Rondas: " + historialSize + " | Total Apostado: " + apostado);
-        System.out.println("Aciertos: " + aciertos + " | Balance Neto: " + balance);
+        System.out.println("Rondas: " + historialSize + " | Total Apostado: " + apostado +"\nAciertos: " + aciertos + " | Balance Neto: " + balance +"\nPorcentaje de acierto: " + porcentaje);
     }
 }
