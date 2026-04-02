@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c59106ea-a90b-49bf-b363-adcc3fba8f23" name="Changes" comment="cambio de nombre Main.java a Ruleta.java, Arreglo de redundancia en la linea 87 (en leerTipoApuesta)" />
+    <list default="true" id="c59106ea-a90b-49bf-b363-adcc3fba8f23" name="Changes" comment="Arreglo para implementar el parámetro tipo en mostrarResultado" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -151,7 +151,15 @@
       <option name="project" value="LOCAL" />
       <updated>1775087727758</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Arreglo para implementar el parámetro tipo en mostrarResultado">
+      <option name="closed" value="true" />
+      <created>1775088037394</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1775088037394</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -167,6 +175,7 @@
     <MESSAGE value="Cambios estéticos e implementación de mostrarResultado." />
     <MESSAGE value="Implementaciónde mostrarEstadísticas" />
     <MESSAGE value="cambio de nombre Main.java a Ruleta.java, Arreglo de redundancia en la linea 87 (en leerTipoApuesta)" />
-    <option name="LAST_COMMIT_MESSAGE" value="cambio de nombre Main.java a Ruleta.java, Arreglo de redundancia en la linea 87 (en leerTipoApuesta)" />
+    <MESSAGE value="Arreglo para implementar el parámetro tipo en mostrarResultado" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arreglo para implementar el parámetro tipo en mostrarResultado" />
   </component>
 </project>

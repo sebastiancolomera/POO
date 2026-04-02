@@ -83,7 +83,7 @@ public class Ruleta {
      */
     public static char leerTipoApuesta(Scanner in) {
         System.out.println("Seleccione su apuesta:");
-        System.out.print("(R) ROJO, (N) NEGRO, (P) PAR, (I) IMPAR");
+        System.out.print("(R) ROJO, (N) NEGRO, (P) PAR, (I) IMPAR: ");
         return in.next().toUpperCase().charAt(0);
     }
     /**
