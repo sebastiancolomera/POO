@@ -90,7 +90,9 @@ public class Ruleta {
             System.out.println("Elija (R) ROJO, (N) NEGRO, (P) PAR o (I) IMPAR");
             System.out.print("Seleccione su apuesta: ");
             String entrada = in.next().toUpperCase();
-            opcion = (entrada.length()>0) ? entrada.charAt(0) : ' ';
+            if(!entrada.isBlank()){
+                opcion = entrada.charAt(0);
+            }
         }
         return opcion;
     }
