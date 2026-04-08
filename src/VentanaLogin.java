@@ -103,6 +103,11 @@ public class VentanaLogin {
      * Debe cerrar la ventana actual e invocar a VentanaRegistro.
      */
     void abrirRegistro() {
-        // TODO: abrir ventana de registro y cerrar login
+        // Cerramos la ventana de login actual
+        frame.dispose();
+        // Creamos y mostramos la ventana de registro
+        VentanaRegistro registro = new VentanaRegistro();
+        registro.mostrarVentana();
+
     }
 }
