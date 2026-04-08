@@ -24,8 +24,11 @@ public class VentanaLogin {
      * Configura el tamaño, los componentes y los eventos.
      */
     public VentanaLogin() {
-        //TODO: inicializar usuarios hardcodeados
-        //TODO: inicializar y configurar la ventana
+        //Inicializar usuarios harcodeados
+        USUARIOS.add(new Usuario("admin", "DD777", "Don Donnie"));
+        USUARIOS.add(new Usuario("jugador1","1234","Gato Ludopata"));
+
+        configurarVentana();
     }
 
     /**
