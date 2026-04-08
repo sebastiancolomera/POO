@@ -68,7 +68,11 @@ public class VentanaLogin {
         // Muestra mensajes dependiendo del resultado
         if (!nombreJugador.isEmpty()) {
             JOptionPane.showMessageDialog(frame, "¡Bienvenido, " + nombreJugador + "!!");
-            // TODO: Cerrar esta ventana y abrir VentanaSaludo
+            // Cerramos la ventana de login actual
+            frame.dispose();
+            // Creamos y mostramos la nueva ventana
+            VentanaSaludo saludo = new VentanaSaludo();
+            saludo.mostrarVentana();
         } else {
             JOptionPane.showMessageDialog(frame, "Credenciales incorrectas.", "Error", JOptionPane.ERROR_MESSAGE);
         }
