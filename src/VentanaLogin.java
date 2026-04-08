@@ -68,7 +68,15 @@ public class VentanaLogin {
      * @return el nombre del usuario si es válido, o cadena vacía si no coincide
      */
     private String validarCredenciales(String u, String p) {
-        // TODO: recorrer arreglo y validar credenciales
+        // Recorremos la lista dinámica de usuarios
+        for (Usuario usuario : USUARIOS) {
+            // Usamos el metodo de la clase Usuario para verificar
+            if (usuario.validarCredenciales(u, p)) {
+                // Si coincide, retornamos el nombre del jugador
+                return usuario.getNombre();
+            }
+        }
+        // Si el ciclo termina y no encontro a nadie, retorna texto vacio
         return "";
     }
 
@@ -76,7 +84,7 @@ public class VentanaLogin {
      * Abre la ventana de registro para crear un nuevo usuario.
      * Debe cerrar la ventana actual e invocar a VentanaRegistro.
      */
-    | void abrirRegistro() {
+    void abrirRegistro() {
         // TODO: abrir ventana de registro y cerrar login
     }
 }
