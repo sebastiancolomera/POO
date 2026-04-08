@@ -30,6 +30,18 @@ public class VentanaLogin {
 
         configurarVentana();
     }
+    private void configurarVentana() {
+        frame.setSize(300,150);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(new java.awt.GridLayout(3,2,5,5)); //3 filas y 2 columnas
+
+        frame.add(lblUsuario);
+        frame.add(txtUsuario);
+        frame.add(lblClave);
+        frame.add(txtClave);
+        frame.add(new JLabel("")); //Espacio para alinear el boton
+        frame.add(btnIngresar);
+    }
 
     /**
      * Muestra la ventana en pantalla.
