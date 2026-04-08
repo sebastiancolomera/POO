@@ -6,7 +6,7 @@ public class Usuario {
     public Usuario(String username, String password, String nombre) {
         this.username = username;
         this.password = password;
-        this.nombre = nombre;
+        this.nombre   = nombre;
     }
     //Valida las credenciales
     public boolean validarCredenciales(String u, String p) {
