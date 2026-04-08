@@ -41,6 +41,7 @@ public class VentanaLogin {
         frame.add(txtClave);
         frame.add(new JLabel("")); //Espacio para alinear el boton
         frame.add(btnIngresar);
+        btnIngresar.addActionListener(e -> login());
     }
 
     /**
@@ -57,7 +58,20 @@ public class VentanaLogin {
      * Debe validar credenciales y abrir la siguiente ventana o mostrar error.
      */
     private void login() {
-        // TODO: implementar lógica de login
+        // Captura los textos de las cajas
+        String u = txtUsuario.getText();
+        String p = String.valueOf(txtClave.getPassword());
+
+        // Validamos
+        String nombreJugador = validarCredenciales(u, p);
+
+        // Muestra mensajes dependiendo del resultado
+        if (!nombreJugador.isEmpty()) {
+            JOptionPane.showMessageDialog(frame, "¡Bienvenido, " + nombreJugador + "!!");
+            // TODO: Cerrar esta ventana y abrir VentanaSaludo
+        } else {
+            JOptionPane.showMessageDialog(frame, "Credenciales incorrectas.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     /**
