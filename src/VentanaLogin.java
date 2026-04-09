@@ -108,6 +108,5 @@ public class VentanaLogin {
         // Creamos y mostramos la ventana de registro
         VentanaRegistro registro = new VentanaRegistro();
         registro.mostrarVentana();
-
     }
 }
