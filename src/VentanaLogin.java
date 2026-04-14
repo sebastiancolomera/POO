@@ -25,9 +25,10 @@ public class VentanaLogin {
      */
     public VentanaLogin() {
         //Inicializar usuarios harcodeados
-        USUARIOS.add(new Usuario("admin", "DD777", "Don Donnie"));
-        USUARIOS.add(new Usuario("jugador1","1234","Gato Ludopata"));
-
+        if (USUARIOS.isEmpty()) {
+            USUARIOS.add(new Usuario("admin", "DD777", "Don Donnie"));
+            USUARIOS.add(new Usuario("jugador1", "1234", "Gato Ludopata"));
+        }
         configurarVentana();
     }
     private void configurarVentana() {
