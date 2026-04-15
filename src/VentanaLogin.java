@@ -18,6 +18,7 @@ public class VentanaLogin {
     private final JLabel lblClave         = new JLabel("Clave:");
     private final JPasswordField txtClave = new JPasswordField();
     private final JButton btnIngresar     = new JButton("Ingresar:");
+    private final JButton btnRegistrar = new JButton("Registrarse");
 
     /**
      * Constructor que inicializa la ventana de Login.
@@ -32,17 +33,25 @@ public class VentanaLogin {
         configurarVentana();
     }
     private void configurarVentana() {
-        frame.setSize(300,150);
+        frame.setSize(300, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new java.awt.GridLayout(3,2,5,5)); //3 filas y 2 columnas
+        frame.setLayout(new java.awt.GridLayout(4, 2, 5, 5)); //3 filas y 2 columnas
 
+        agregarComponentes();
+
+        btnIngresar.addActionListener(e -> login());
+        btnRegistrar.addActionListener(e -> abrirRegistro());
+    }
+
+    private void agregarComponentes(){
         frame.add(lblUsuario);
         frame.add(txtUsuario);
         frame.add(lblClave);
         frame.add(txtClave);
         frame.add(new JLabel("")); //Espacio para alinear el boton
         frame.add(btnIngresar);
-        btnIngresar.addActionListener(e -> login());
+        frame.add(new JLabel("")); //Espacio para alinear el boton
+        frame.add(btnRegistrar);
     }
 
     /**
@@ -72,8 +81,7 @@ public class VentanaLogin {
             // Cerramos la ventana de login actual
             frame.dispose();
             // Creamos y mostramos la nueva ventana
-            VentanaSaludo saludo = new VentanaSaludo();
-            saludo.mostrarVentana();
+            new VentanaSaludo().mostrarVentana();
         } else {
             JOptionPane.showMessageDialog(frame, "Credenciales incorrectas.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -103,7 +111,7 @@ public class VentanaLogin {
      * Abre la ventana de registro para crear un nuevo usuario.
      * Debe cerrar la ventana actual e invocar a VentanaRegistro.
      */
-    void abrirRegistro() {
+    private void abrirRegistro() {
         // Cerramos la ventana de login actual
         frame.dispose();
         // Creamos y mostramos la ventana de registro
