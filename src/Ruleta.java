@@ -42,4 +42,21 @@ public class Ruleta {
             historialSize++;
         }
     }
+
+    public String getEstadisticas() {
+        int apostado = 0, aciertos = 0, balance = 0;
+        for (int i = 0; i < historialSize; i++) {
+            apostado += historialApuestas[i];
+            if (historialAciertos[i]) {
+                aciertos++;
+                balance += historialApuestas[i];
+            } else {
+                balance -= historialApuestas[i];
+            }
+        }
+        double porcentaje = (historialSize == 0) ? 0 : (aciertos * 100.0) / historialSize;
+        return "Rondas: " + historialSize + "\nTotal Apostado: " + apostado + 
+               "\nAciertos: " + aciertos + "\nBalance: " + balance + 
+               "\nPorcentaje: " + String.format("%.1f", porcentaje) + "%";
+    }
 }
