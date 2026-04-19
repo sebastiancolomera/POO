@@ -67,17 +67,21 @@ public class Ruleta {
      * @param in Scanner para entrada por consola.
      */
     public static void iniciarRonda(Scanner in) {
-        System.out.print("Ingrese monto a apostar: ");
+        int monto = leerMonto(in);
+        char tipo = leerTipoApuesta(in);
+        int num = girarRuleta();
+        boolean gano = evaluarResultado(num, tipo);
+        registrarResultado(num, monto, gano);
+        mostrarResultado(num, tipo, monto, gano);
+    }
+
+    public static int leerMonto(Scanner in) {
+        System.out.print("Ingrese monto a apuestas: ");
         while (!in.hasNextInt()) {
             in.next();
             System.out.println("Ingrese un monto numerico entero: ");
         }
-        int monto = in.nextInt();
-        char tipo = leerTipoApuesta(in);
-        int num = girarRuleta();
-        boolean gano = evaluarResultado(num, tipo);
-        registrarResultado(num,monto,gano);
-        mostrarResultado(num,tipo,monto,gano);
+        return in.nextInt();
     }
     /**
      * Permite al usuario seleccionar el tipo de apuesta (R/N/P/I).
@@ -160,7 +164,7 @@ public class Ruleta {
         System.out.println("Apostaste a la opcion: " + tipo);
         System.out.println("El numero ganador fue: "+numero);
         if (acierto) {
-            System.out.println("¡GG! Has ganado " + (monto) + " fichas.");
+            System.out.println("¡GG! Has ganado " + monto + " fichas.");
         } else {
             System.out.println("JAJAJAJA Suerte la próxima ToT Perdiste " + monto + " fichas.");
         }
