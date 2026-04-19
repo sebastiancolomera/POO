@@ -47,7 +47,20 @@ public class VentanaRegistro {
             JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
+        if (usuarioExiste(u)) {
+            JOptionPane.showMessageDialog(frame, "El usuario ya existe.", "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
         return true;
+    }
+
+    private boolean usuarioExiste(String u) {
+        for (Usuario usuario : VentanaLogin.USUARIOS) {
+            if (usuario.getUsername().equals(u)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void procesarGuardado(String n, String u, String c) {
