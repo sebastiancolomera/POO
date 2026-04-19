@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class VentanaRuleta {
     private final JFrame frame = new JFrame("Ruleta - Casino Black Cat");
-    private final Ruleta ruleta = new Ruleta();
+    private final Ruleta ruleta;
     private final JLabel lblNumero = new JLabel("Número: -");
     private final JLabel lblResultado = new JLabel("Resultado: -");
     private final JLabel lblBalance = new JLabel("Balance: 0");
@@ -12,7 +12,8 @@ public class VentanaRuleta {
     private final JButton btnJugar = new JButton("Girar Ruleta");
     private final JButton btnVolver = new JButton("Volver");
 
-    public VentanaRuleta() {
+    public VentanaRuleta(Ruleta ruleta) {
+        this.ruleta = ruleta;
         frame.setSize(350, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
@@ -50,7 +51,7 @@ public class VentanaRuleta {
 
             lblNumero.setText("Número: " + numero);
             lblResultado.setText(gano ? "¡Ganaste!" : "Perdiste");
-            lblBalance.setText("Balance: " + (gano ? "+" + monto : "-" + monto));
+            lblBalance.setText("Balance: " + ruleta.getBalance());
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(frame, "Ingrese un monto válido.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -58,7 +59,7 @@ public class VentanaRuleta {
 
     private void volver() {
         frame.dispose();
-        new VentanaSaludo().mostrarVentana();
+        new VentanaSaludo(ruleta).mostrarVentana();
     }
 
     public void mostrarVentana() {

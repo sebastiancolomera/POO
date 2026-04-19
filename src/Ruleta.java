@@ -6,6 +6,7 @@ public class Ruleta {
     private final int[] historialApuestas = new int[MAX_HISTORIAL];
     private final boolean[] historialAciertos = new boolean[MAX_HISTORIAL];
     private int historialSize = 0;
+    private int balance = 0;
     private final Random rng = new Random();
     private final int[] numerosRojos = {1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36};
 
@@ -15,6 +16,7 @@ public class Ruleta {
     public int[] getHistorialNumeros() { return historialNumeros; }
     public int[] getHistorialApuestas() { return historialApuestas; }
     public boolean[] getHistorialAciertos() { return historialAciertos; }
+    public int getBalance() { return balance; }
 
     public int girarRuleta() { return rng.nextInt(37); }
 
@@ -39,20 +41,16 @@ public class Ruleta {
             historialNumeros[historialSize] = numero;
             historialApuestas[historialSize] = apuesta;
             historialAciertos[historialSize] = acierto;
+            balance += acierto ? apuesta : -apuesta;
             historialSize++;
         }
     }
 
     public String getEstadisticas() {
-        int apostado = 0, aciertos = 0, balance = 0;
+        int apostado = 0, aciertos = 0;
         for (int i = 0; i < historialSize; i++) {
             apostado += historialApuestas[i];
-            if (historialAciertos[i]) {
-                aciertos++;
-                balance += historialApuestas[i];
-            } else {
-                balance -= historialApuestas[i];
-            }
+            if (historialAciertos[i]) { aciertos++; }
         }
         double porcentaje = (historialSize == 0) ? 0 : (aciertos * 100.0) / historialSize;
         return "Rondas: " + historialSize + "\nTotal Apostado: " + apostado + 

@@ -5,9 +5,19 @@ public class VentanaSaludo {
     private final JButton btnJugar = new JButton("Jugar Ruleta");
     private final JButton btnHistorial = new JButton("Ver Historial");
     private final JButton btnLogout = new JButton("Logout");
-    private final Ruleta ruleta = new Ruleta();
+    private Ruleta ruleta;
 
     public VentanaSaludo() {
+        this.ruleta = new Ruleta();
+        initUI();
+    }
+
+    public VentanaSaludo(Ruleta ruleta) {
+        this.ruleta = ruleta;
+        initUI();
+    }
+
+    private void initUI() {
         frame.setSize(400, 200);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
@@ -30,7 +40,7 @@ public class VentanaSaludo {
 
     private void abrirRuleta() {
         frame.dispose();
-        new VentanaRuleta().mostrarVentana();
+        new VentanaRuleta(ruleta).mostrarVentana();
     }
 
     private void verHistorial() {
