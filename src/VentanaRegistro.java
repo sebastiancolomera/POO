@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import modelo.Usuario;
+import controlador.SessionController;
 
 public class VentanaRegistro {
     private final JFrame frame = new JFrame("Registro - Casino Black Cat");
@@ -7,8 +9,10 @@ public class VentanaRegistro {
     private final JTextField txtUsuario = new JTextField();
     private final JPasswordField txtClave = new JPasswordField();
     private final JButton btnRegistrar = new JButton("Registrar");
+    private final SessionController session;
 
     public VentanaRegistro() {
+        this.session = SessionController.getInstancia();
         frame.setSize(300, 200);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(new GridLayout(4, 2, 5, 5));
@@ -37,35 +41,12 @@ public class VentanaRegistro {
         String u = txtUsuario.getText().trim();
         String c = new String(txtClave.getPassword()).trim();
 
-        if (validarCampos(n, u, c)) {
-            procesarGuardado(n, u, c);
-        }
-    }
-
-    private boolean validarCampos(String n, String u, String c) {
         if (n.isEmpty() || u.isEmpty() || c.isEmpty()) {
             JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
-            return false;
+            return;
         }
-        if (usuarioExiste(u)) {
-            JOptionPane.showMessageDialog(frame, "El usuario ya existe.", "Error", JOptionPane.ERROR_MESSAGE);
-            return false;
-        }
-        return true;
-    }
 
-    private boolean usuarioExiste(String u) {
-        for (Usuario usuario : VentanaLogin.USUARIOS) {
-            if (usuario.getUsername().equals(u)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private void procesarGuardado(String n, String u, String c) {
-        //Agregar a la lista dinámica de la ventana de Login
-        VentanaLogin.USUARIOS.add(new Usuario(u, c, n));
+        session.registro(u, c, n);
         JOptionPane.showMessageDialog(frame, "Registro exitoso! Ahora puedes iniciar sesión.");
         frame.dispose();
         new VentanaLogin().mostrarVentana();

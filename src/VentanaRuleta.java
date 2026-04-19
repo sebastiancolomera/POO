@@ -1,19 +1,22 @@
 import javax.swing.*;
 import java.awt.*;
+import modelo.TipoApuesta;
+import controlador.RuletaController;
+import controlador.SessionController;
 
 public class VentanaRuleta {
     private final JFrame frame = new JFrame("Ruleta - Casino Black Cat");
-    private final Ruleta ruleta;
+    private final RuletaController ruletaController;
     private final JLabel lblNumero = new JLabel("Número: -");
     private final JLabel lblResultado = new JLabel("Resultado: -");
     private final JLabel lblBalance = new JLabel("Balance: 0");
     private final JTextField txtMonto = new JTextField();
-    private final JComboBox<String> cmbTipo = new JComboBox<>(new String[]{"ROJO", "NEGRO", "PAR", "IMPAR"});
+    private final JComboBox<TipoApuesta> cmbTipo = new JComboBox<>(TipoApuesta.values());
     private final JButton btnJugar = new JButton("Girar Ruleta");
     private final JButton btnVolver = new JButton("Volver");
 
-    public VentanaRuleta(Ruleta ruleta) {
-        this.ruleta = ruleta;
+    public VentanaRuleta(RuletaController ruletaController) {
+        this.ruletaController = ruletaController;
         frame.setSize(350, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
@@ -41,17 +44,16 @@ public class VentanaRuleta {
     private void jugar() {
         try {
             int monto = Integer.parseInt(txtMonto.getText());
-            String tipoStr = (String) cmbTipo.getSelectedItem();
-            char tipo = tipoStr.charAt(0);
+            TipoApuesta tipo = (TipoApuesta) cmbTipo.getSelectedItem();
 
-            int numero = ruleta.girarRuleta();
-            boolean gano = ruleta.evaluarResultado(numero, tipo);
+            int numero = ruletaController.getRuleta().girarRuleta();
+            boolean gano = ruletaController.getRuleta().evaluarResultado(numero, tipo);
 
-            ruleta.registrarResultado(numero, monto, gano);
+            ruletaController.jugar(monto, tipo);
 
             lblNumero.setText("Número: " + numero);
             lblResultado.setText(gano ? "¡Ganaste!" : "Perdiste");
-            lblBalance.setText("Balance: " + ruleta.getBalance());
+            lblBalance.setText("Balance: " + ruletaController.getBalance());
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(frame, "Ingrese un monto válido.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -59,7 +61,7 @@ public class VentanaRuleta {
 
     private void volver() {
         frame.dispose();
-        new VentanaSaludo(ruleta).mostrarVentana();
+        new VentanaSaludo(ruletaController).mostrarVentana();
     }
 
     public void mostrarVentana() {
