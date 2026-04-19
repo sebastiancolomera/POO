@@ -1,5 +1,7 @@
 import java.util.Random;
 
+package modelo;
+
 public class Ruleta {
     private static final int MAX_HISTORIAL = 100;
     private final int[] historialNumeros = new int[MAX_HISTORIAL];

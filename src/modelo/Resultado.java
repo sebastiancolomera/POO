@@ -1,3 +1,5 @@
+package modelo;
+
 public class Resultado {
     private final int numero;
     private final int apuesta;
