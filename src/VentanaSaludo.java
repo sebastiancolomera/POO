@@ -1,11 +1,12 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class VentanaSaludo {
     private final JFrame frame = new JFrame("Casino Black Cat - Menú Principal");
     private final JButton btnJugar = new JButton("Jugar Ruleta");
     private final JButton btnHistorial = new JButton("Ver Historial");
     private final JButton btnLogout = new JButton("Logout");
-    private Ruleta ruleta;
+    private final Ruleta ruleta;
 
     public VentanaSaludo() {
         this.ruleta = new Ruleta();
