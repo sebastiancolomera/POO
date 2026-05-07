@@ -1,8 +1,9 @@
+package vista;
+
 import javax.swing.*;
 import java.awt.*;
 import modelo.TipoApuesta;
 import controlador.RuletaController;
-import controlador.SessionController;
 
 public class VentanaRuleta {
     private final JFrame frame = new JFrame("Ruleta - Casino Black Cat");

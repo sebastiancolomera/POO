@@ -1,6 +1,6 @@
-import java.util.Random;
-
 package modelo;
+
+import java.util.Random;
 
 public class Ruleta {
     private static final int MAX_HISTORIAL = 100;

@@ -10,7 +10,7 @@ public class SessionController {
     private final List<Usuario> usuarios;
 
     private SessionController() {
-        this.usuarios = new ArrayList<>();
+        this.usuarios = new ArrayList<Usuario>();
         inicializarUsuarios();
     }
 

@@ -1,6 +1,8 @@
+package vista;
+
 import javax.swing.*;
 import java.awt.*;
-import modelo.Usuario;
+
 import controlador.SessionController;
 
 public class VentanaRegistro {
