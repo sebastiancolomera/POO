@@ -5,7 +5,7 @@ import modelo.TipoApuesta;
 import modelo.Resultado;
 
 public class RuletaController {
-    private Ruleta ruleta;
+    private final Ruleta ruleta;
 
     public RuletaController() {
         this.ruleta = new Ruleta();
@@ -17,9 +17,9 @@ public class RuletaController {
 
     public Resultado jugar(int monto, TipoApuesta tipo) {
         int numero = ruleta.girarRuleta();
-        boolean gano = ruleta.evaluarResultado(numero, tipo);
-        ruleta.registrarResultado(numero, monto, gano);
-        return new Resultado(numero, monto, gano, tipo);
+        boolean acierto = ruleta.evaluarResultado(numero, tipo);
+        ruleta.registrarResultado(numero, monto, acierto, tipo);
+        return new Resultado(numero, monto, acierto, tipo);
     }
 
     public Ruleta getRuleta() {

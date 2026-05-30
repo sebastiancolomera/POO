@@ -18,8 +18,8 @@ public class VentanaPerfil {
     private final JButton btnDepositar = new JButton("Depositar");
     private final JButton btnVolver = new JButton("Volver");
 
-    public VentanaPerfil(RuletaController ruletaController) {
-        this.session = SessionController.getInstancia();
+    public VentanaPerfil(SessionController session,RuletaController ruletaController) {
+        this.session = session;
         this.ruletaController = ruletaController;
         initUI();
     }
@@ -29,8 +29,6 @@ public class VentanaPerfil {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setLayout(new GridLayout(7, 2, 5, 5));
-
-        Usuario usuario = session.getUsuarioActual();
 
         frame.add(new JLabel("Usuario:"));
         frame.add(lblNombre);
@@ -83,7 +81,7 @@ public class VentanaPerfil {
 
     private void volver() {
         frame.dispose();
-        new VentanaSaludo(ruletaController).mostrarVentana();
+        new VentanaSaludo(session, ruletaController).mostrarVentana();
     }
 
     public void mostrarVentana() {

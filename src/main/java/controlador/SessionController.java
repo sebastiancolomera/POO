@@ -5,20 +5,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SessionController {
-    private static SessionController instancia;
     private Usuario usuarioActual;
     private final List<Usuario> usuarios;
 
-    private SessionController() {
-        this.usuarios = new ArrayList<Usuario>();
+    public SessionController() {
+        this.usuarios = new ArrayList<>();
         inicializarUsuarios();
-    }
-
-    public static SessionController getInstancia() {
-        if (instancia == null) {
-            instancia = new SessionController();
-        }
-        return instancia;
     }
 
     private void inicializarUsuarios() {
@@ -36,10 +28,17 @@ public class SessionController {
         return null;
     }
 
-    public void registro(String username, String password, String nombre) {
+    public boolean registro(String username, String password, String nombre) {
+        for (Usuario u : usuarios) {
+            if (u.getUsername().equals(username)) {
+                return false;
+            }
+        }
+
         Usuario nuevo = new Usuario(username, password, nombre);
         usuarios.add(nuevo);
         this.usuarioActual = nuevo;
+        return true;
     }
 
     public void logout() {
@@ -48,9 +47,5 @@ public class SessionController {
 
     public Usuario getUsuarioActual() {
         return usuarioActual;
-    }
-
-    public boolean isLoggedIn() {
-        return usuarioActual != null;
     }
 }

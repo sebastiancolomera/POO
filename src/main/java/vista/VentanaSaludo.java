@@ -13,16 +13,16 @@ public class VentanaSaludo {
     private final JButton btnPerfil = new JButton("Perfil");
     private final JButton btnLogout = new JButton("Logout");
     private final SessionController session;
-    private RuletaController ruletaController;
+    private final RuletaController ruletaController;
 
-    public VentanaSaludo() {
-        this.session = SessionController.getInstancia();
+    public VentanaSaludo(SessionController session) {
+        this.session = session;
         this.ruletaController = new RuletaController();
         initUI();
     }
 
-    public VentanaSaludo(RuletaController ruletaController) {
-        this.session = SessionController.getInstancia();
+    public VentanaSaludo(SessionController session, RuletaController ruletaController) {
+        this.session = session;
         this.ruletaController = ruletaController;
         initUI();
     }
@@ -31,7 +31,7 @@ public class VentanaSaludo {
         frame.setSize(400, 250);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-        frame.setLayout(new java.awt.GridLayout(5, 1, 10, 10));
+        frame.setLayout(new BorderLayout(10,10));
 
         Usuario usuario = session.getUsuarioActual();
         String nombre = (usuario != null) ? usuario.getNombre() : "Invitado";
@@ -54,7 +54,7 @@ public class VentanaSaludo {
 
     private void abrirRuleta() {
         frame.dispose();
-        new VentanaRuleta(ruletaController).mostrarVentana();
+        new VentanaRuleta(session, ruletaController).mostrarVentana();
     }
 
     private void verHistorial() {
@@ -64,13 +64,13 @@ public class VentanaSaludo {
 
     private void abrirPerfil() {
         frame.dispose();
-        new VentanaPerfil(ruletaController).mostrarVentana();
+        new VentanaPerfil(session, ruletaController).mostrarVentana();
     }
 
     private void logout() {
         session.logout();
         frame.dispose();
-        new VentanaLogin().mostrarVentana();
+        new VentanaLogin(session).mostrarVentana();
     }
 
     public void mostrarVentana() {

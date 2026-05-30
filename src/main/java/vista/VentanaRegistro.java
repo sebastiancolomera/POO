@@ -13,8 +13,8 @@ public class VentanaRegistro {
     private final JButton btnRegistrar = new JButton("Registrar");
     private final SessionController session;
 
-    public VentanaRegistro() {
-        this.session = SessionController.getInstancia();
+    public VentanaRegistro(SessionController session) {
+        this.session = session;
         frame.setSize(300, 200);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.setLayout(new GridLayout(4, 2, 5, 5));
@@ -48,9 +48,14 @@ public class VentanaRegistro {
             return;
         }
 
-        session.registro(u, c, n);
-        JOptionPane.showMessageDialog(frame, "Registro exitoso! Ahora puedes iniciar sesión.");
-        frame.dispose();
-        new VentanaLogin().mostrarVentana();
+        boolean exito = session.registro(u ,c ,n);
+
+        if (exito) {
+            JOptionPane.showMessageDialog(frame, "Registro exitoso! Ahora puedes iniciar sesión.");
+            frame.dispose();
+            new VentanaLogin(session).mostrarVentana();
+        } else {
+            JOptionPane.showMessageDialog(frame, "El nombre de usuario '" + u + "' ya está en uso. Elige otro.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 }

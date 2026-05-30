@@ -14,8 +14,8 @@ public class VentanaLogin {
     private final JButton btnRegistrar = new JButton("Registrarse");
     private final SessionController session;
 
-    public VentanaLogin() {
-        this.session = SessionController.getInstancia();
+    public VentanaLogin(SessionController session) {
+        this.session = session;
         configurarVentana();
     }
 
@@ -55,7 +55,7 @@ public class VentanaLogin {
         if (usuario != null) {
             JOptionPane.showMessageDialog(frame, "¡Bienvenido, " + usuario.getNombre() + "!!");
             frame.dispose();
-            new VentanaSaludo().mostrarVentana();
+            new VentanaSaludo(session).mostrarVentana();
         } else {
             JOptionPane.showMessageDialog(frame, "Credenciales incorrectas.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -63,6 +63,6 @@ public class VentanaLogin {
 
     private void abrirRegistro() {
         frame.dispose();
-        new VentanaRegistro().mostrarVentana();
+        new VentanaRegistro(session).mostrarVentana();
     }
 }

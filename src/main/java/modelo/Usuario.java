@@ -1,8 +1,8 @@
 package modelo;
 
 public class Usuario {
-    private String username;
-    private String password;
+    private final String username;
+    private final String password;
     private String nombre;
 
     public Usuario() {

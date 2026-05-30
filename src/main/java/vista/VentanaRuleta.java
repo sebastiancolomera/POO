@@ -2,11 +2,14 @@ package vista;
 
 import javax.swing.*;
 import java.awt.*;
+import modelo.Resultado;
 import modelo.TipoApuesta;
 import controlador.RuletaController;
+import controlador.SessionController;
 
 public class VentanaRuleta {
     private final JFrame frame = new JFrame("Ruleta - Casino Black Cat");
+    private final SessionController session;
     private final RuletaController ruletaController;
     private final JLabel lblNumero = new JLabel("Número: -");
     private final JLabel lblResultado = new JLabel("Resultado: -");
@@ -16,7 +19,8 @@ public class VentanaRuleta {
     private final JButton btnJugar = new JButton("Girar Ruleta");
     private final JButton btnVolver = new JButton("Volver");
 
-    public VentanaRuleta(RuletaController ruletaController) {
+    public VentanaRuleta(SessionController session, RuletaController ruletaController) {
+        this.session = session;
         this.ruletaController = ruletaController;
         frame.setSize(350, 300);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,26 +47,19 @@ public class VentanaRuleta {
     }
 
     private void jugar() {
-        try {
-            int monto = Integer.parseInt(txtMonto.getText());
-            TipoApuesta tipo = (TipoApuesta) cmbTipo.getSelectedItem();
+        int monto = Integer. parseInt(txtMonto.getText());
+        TipoApuesta tipo = (TipoApuesta) cmbTipo.getSelectedItem();
 
-            int numero = ruletaController.getRuleta().girarRuleta();
-            boolean gano = ruletaController.getRuleta().evaluarResultado(numero, tipo);
+        Resultado resultado = ruletaController.jugar(monto, tipo);
 
-            ruletaController.jugar(monto, tipo);
-
-            lblNumero.setText("Número: " + numero);
-            lblResultado.setText(gano ? "¡Ganaste!" : "Perdiste");
-            lblBalance.setText("Balance: " + ruletaController.getBalance());
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(frame, "Ingrese un monto válido.", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+        lblNumero.setText("Número obtenido: " + resultado.getNumero());
+        lblResultado.setText("Resultado: " + (resultado.isAcierto() ? "¡¡GANASTE!!" : "PERDISTE..."));
+        lblBalance.setText("Balance: " + ruletaController.getBalance());
     }
 
     private void volver() {
         frame.dispose();
-        new VentanaSaludo(ruletaController).mostrarVentana();
+        new VentanaSaludo(session, ruletaController).mostrarVentana();
     }
 
     public void mostrarVentana() {
